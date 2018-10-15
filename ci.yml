@@ -1,0 +1,15 @@
+Global:
+    tool : build_submitter
+Default:
+    profile : [dev]
+Profiles:
+    - profile:
+      name : dev
+      env : cmc_standard
+      command : mvn -U clean install && sh postBuild.sh
+      release : true
+    - profile:
+      name :  publish
+      env : cmc_standard
+      command : mvn -U clean deploy -Prelease && sh postBuild.sh
+      release : true
