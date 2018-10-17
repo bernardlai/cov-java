@@ -6,7 +6,7 @@ Profiles:
     - profile:
       name : dev
       env : cmc_standard
-      command : mvn -U clean install && ls -l && mkdir output && sh postBuild.sh
+      command : mvn -U clean install  && mkdir output && mv target/* output && sh postBuild.sh
       release : true
     - profile:
       name :  publish
