@@ -9,6 +9,10 @@ public class AddOperation {
         return "----" + s + "-------";
     }
 
+    public String printName(String s) {
+        return "----" + s + "-------";
+    }
+
     public String printScore(int i) {
         if (i > 0 && i < 60) {
             return "D";
