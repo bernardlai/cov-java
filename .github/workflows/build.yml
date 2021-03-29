@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - main
+      - springboot
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
