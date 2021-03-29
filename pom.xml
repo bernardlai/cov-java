@@ -1,69 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.baidu.xly</groupId>
+	<artifactId>helloworld</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>helloworld</name>
+	<description>Demo project for Spring Boot</description>
 
-  <groupId>com.test</groupId>
-  <artifactId>JacocoUnitDemo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
 
-  <name>JacocoUnitDemo</name>
-  <url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.projectKey>bernardlai_cov-java</sonar.projectKey>
-    <sonar.organization>bernardlai</sonar.organization>
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-  </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
-  </dependencies>
-   <build>
-  	<plugins>
-		<plugin>    
-                <artifactId>maven-compiler-plugin</artifactId>   
-                <version>3.1</version>   
-                <configuration>   
-                    <source>10</source>   
-                    <target>10</target>   
-                </configuration>   
-		</plugin>
-		<plugin>  
-        	 <groupId>org.apache.maven.plugins</groupId>  
-        	 <artifactId>maven-surefire-plugin</artifactId>  
-        	<version>2.4.2</version>  
-        	<configuration>  
-          	<skipTests>true</skipTests>  
-        	</configuration>  
-		</plugin>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+	<dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>1.3.1</version>
+    </dependency>
 
-  		<plugin>
-  			<groupId>org.jacoco</groupId>
-			<artifactId>jacoco-maven-plugin</artifactId>
-			<version>0.7.9</version>
-	        <executions>
-	        	<execution>
-	        		<id>pre-test</id>
-	        		<goals>
-	        			<goal>prepare-agent</goal>
-	        		</goals>
-	        	</execution>
-	        	<execution>  
-		            <id>post-test</id>  
-		            <phase>test</phase>  
-		            <goals>  
-		              <goal>report</goal>  
-		            </goals>  
-		         </execution>  
-	        </executions>
-  		</plugin>
-  	</plugins>
-  </build>
+	<dependency>
+    	<groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+		<version>5.1.38</version>
+    </dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>helloworld</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
