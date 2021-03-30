@@ -1,14 +1,10 @@
-package com.test.JacocoUnitDemo;
+package com.baidu.xly.helloworld;
 
 /**
  * Hello world!
  *
  */
-public class HelloWord {
-    public HelloWord() {
-
-    }
-
+public class HelloWorld {
     public String testMethod1() {
         return "Hello world!";
     }
@@ -28,16 +24,11 @@ public class HelloWord {
         return a / b;
     }
 
-    public String score(int s) {
-        if (s < 60) {
+    public String printScore(int i) {
+        if (i > 0 && i < 60) {
             return "D";
-        } else if (s < 70) {
-            return "C";
-        } else if (s < 90) {
-            return "B";
         } else {
             return "A";
         }
     }
-
 }
